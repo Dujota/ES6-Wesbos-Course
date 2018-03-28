@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>let and const real world</title>
 </head>
-<body>
-<script>
-  console.log(pizza);
-  const pizza = 'Deep Dish 🍕🍕🍕';
 
-</script>
+<body>
+  <script>
+    console.log(pizza);
+
+    // this is the temporal dead zone as we cannot access the variable before it is delcated (whjjich is doen below) 
+
+    const pizza = 'Deep Dish 🍕🍕🍕';
+  </script>
 </body>
+
 </html>

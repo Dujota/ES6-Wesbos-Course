@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>let and const real world</title>
 </head>
+
 <body>
-<script>
-  {
-    const name = 'wes';
-    console.log(name);
-  }
+  <script>
+    // since let and const is block scoped then these two variables will never leak into the window, removes IFFE
+    {
+      const name = 'wes';
+      console.log(name);
+    }
 
-  for(let i = 0; i < 10; i++) {
-    console.log(i);
-    setTimeout(function() {
-      console.log('The number is ' + i);
-    },1000);
-  }
-
-</script>
+    // scopes the i to the loop block so it doesnt leak and we get the correct output inside the loop 
+    for (let i = 0; i < 10; i++) {
+      console.log(i);
+      setTimeout(function () {
+        console.log('The number is ' + i);
+      }, 1000);
+    }
+  </script>
 </body>
+
 </html>
