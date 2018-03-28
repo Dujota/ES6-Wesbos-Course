@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Arrow functions → → </title>
 </head>
+
 <body>
-<script>
-  const names = ['wes', 'kait', 'lux'];
+  <script>
+    const names = ['wes', 'kait', 'lux'];
 
-  const fullNames = names.map(function(name) {
-    return `${name} bos`;
-  });
+    // VanillaJS Function
+    const fullNames = names.map(function (name) {
+      return `${name} bos`;
+    });
 
-  const fullNames2 = names.map((name) => {
-    return `${name} bos`;
-  });
+    // Refactored to arrow Function by removing the function and adding a rocket to the right of the input
+    const fullNames2 = names.map((name) => {
+      return `${name} bos`;
+    });
 
-  const fullNames3 = names.map(name => {
-    return `${name} bos`;
-  });
+    // refactored again, by removing hte brackets around the input for items with only 1 parameters
+    const fullNames3 = names.map(name => {
+      return `${name} bos`;
+    });
 
-  const fullNames4 = names.map(name => `${name} bos`);
 
-  const fullNames5 = names.map(() => `cool bos`);
+    // callback functions that are one line returns, we just delete the return and delete the curly brackets and then we are doing an implicit return and the function will just return whatever is after the arrow 
+    const fullNames4 = names.map(name => `${name} bos`);
 
-  const sayMyName = (name) => {
-    alert(`Hello ${name}!`)
-  }
+    // if there is no arguments/inputs at all, then we can just pass empty brackets arrow and then the implicit return 
+    const fullNames5 = names.map(() => `cool bos`);
 
-  sayMyName('Wes');
-
-</script>
+    // Arrow functions are always annonymous, function sayMyName(name) ... {}; 
+    // The solution to this to assign the arrow function to a variable 
+    const sayMyName = (name) => {
+      alert(`Hello ${name}!`)
+    }
+    sayMyName('Wes');
+  </script>
 </body>
+
 </html>
