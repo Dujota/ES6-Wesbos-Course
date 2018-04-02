@@ -6,11 +6,20 @@
 </head>
 <body>
 <script>
-  function calculateBill(total, tax = 0.13, tip = 0.15) {
+  // function calculateBill(total, tax = 0.13, tip = 0.15) {
+  //   return total + (total * tax) + (total * tip);
+  // }
+  //
+  // const totalBill = calculateBill(100, undefined, 0.25);
+
+// we can pass in a default value for the argument values so we can just pass in the bill amount
+  function calculateMyBill(total, tax = 0.13, tip = 0.15) {
     return total + (total * tax) + (total * tip);
   }
 
-  const totalBill = calculateBill(100, undefined, 0.25);
+  const totalBill = calculateMyBill(100)
+  // const totalBill = calculateBill(100, undefined, 0.25);
+  // can also pass in an undefined to set the default and then we can specify the value of anything that passes after. 
   console.log(totalBill);
 </script>
 </body>
