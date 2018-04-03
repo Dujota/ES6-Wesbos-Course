@@ -42,6 +42,7 @@
   onlyFlexbox = liArray.filter(word => word.innerHTML.includes('Flexbox'));
 
   // map down to a list of time strings
+  listOfStrings = onlyFlexbox.map( li => li.dataset.time );
 
   // map to an array of seconds
 
