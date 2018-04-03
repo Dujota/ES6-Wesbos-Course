@@ -12,6 +12,10 @@
     { name: 'Sunny', age: 1 }
   ];
 
+
+// can use use map with arrow function to give implicit return of a string that will create a new array with of markup as string
+
+// we are enbedding a template string inside a template string
   const markup = `
     <ul class="dogs">
       ${dogs.map(dog => `
@@ -21,7 +25,9 @@
           ${dog.age * 7}
         </li>`).join('')}
     </ul>
-  `;
+  `; // use join('') to get rid of the commas from the map
+
+  // we then take that markup and append it to the body
   document.body.innerHTML = markup;
 
 </script>
