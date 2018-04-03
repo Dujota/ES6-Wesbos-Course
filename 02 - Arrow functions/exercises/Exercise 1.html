@@ -39,19 +39,19 @@
   const liArray = [...document.querySelectorAll('li')];
 
   // Filter for only the elements that contain the word 'flexbox'
-  onlyFlexbox = liArray.filter(word => word.innerHTML.includes('Flexbox'));
+  const onlyFlexbox = liArray.filter(word => word.innerHTML.includes('Flexbox'));
 
   // map down to a list of time strings
-  listOfStrings = onlyFlexbox.map( li => li.dataset.time );
+  const listOfStrings = onlyFlexbox.map( li => li.dataset.time );
 
   // map to an array of seconds
-  toSeconds = listOfStrings.map(item =>
+  const toSeconds = listOfStrings.map(item =>
     converted = item.split(':').reduce((accumilated, time) => (60 * accumilated) + +time, 0)
   );
 
   // reduce to get total
 
-  totalTime = toSeconds.reduce((accumulator, current) => accumulator + current, 0)
+  const totalTime = toSeconds.reduce((accumulator, current) => accumulator + current, 0)
 
   // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
 
