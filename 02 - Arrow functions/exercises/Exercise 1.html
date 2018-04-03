@@ -34,9 +34,11 @@
   // Select all the list items on the page and convert to array
 
   // can use a spread operator which is the equivalent of using the aray.protoype method :
-//  var nodesArray = [].slice.call(document.querySelectorAll("div"));
+  // const items = Array.from(document.querySelectorAll('[data-time]');)
+  //[data-time] is the attribute selector. 
 
   const liArray = [...document.querySelectorAll('li')];
+
 
   // Filter for only the elements that contain the word 'flexbox'
   const onlyFlexbox = liArray.filter(word => word.innerHTML.includes('Flexbox'));
