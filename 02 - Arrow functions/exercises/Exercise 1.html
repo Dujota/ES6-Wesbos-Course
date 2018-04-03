@@ -35,27 +35,28 @@
 
   // can use a spread operator which is the equivalent of using the aray.protoype method :
   // const items = Array.from(document.querySelectorAll('[data-time]');)
-  //[data-time] is the attribute selector. 
+  //[data-time] is the attribute selector.
 
   const liArray = [...document.querySelectorAll('li')];
 
 
   // Filter for only the elements that contain the word 'flexbox'
-  const onlyFlexbox = liArray.filter(word => word.innerHTML.includes('Flexbox'));
+  const filtered = liArray
+  .filter(word => word.innerHTML.includes('Flexbox'))
 
   // map down to a list of time strings
-  const listOfStrings = onlyFlexbox.map( li => li.dataset.time );
+.map( li => li.dataset.time )
 
   // map to an array of seconds
-  const toSeconds = listOfStrings.map(item =>
-    converted = item.split(':').reduce((accumilated, time) => (60 * accumilated) + +time, 0)
-  );
-
+  .map(time =>
+    converted = time.split(':').reduce((accumilated, time) => (60 * accumilated) + +time, 0)
+  )
   // reduce to get total
 
-  const totalTime = toSeconds.reduce((accumulator, current) => accumulator + current, 0)
+  .reduce((accumulator, current) => accumulator + current, 0)
 
   // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
+  console.log(filtered);
 
 </script>
 </body>
