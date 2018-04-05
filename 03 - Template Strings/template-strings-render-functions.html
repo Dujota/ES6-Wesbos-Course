@@ -12,14 +12,17 @@
     keywords: ['pale', 'cloudy', 'spiced', 'crisp']
   };
 
+// we move the map funciton out of markup and we create a render function that will act like a react component and then pass that info to the markup via a function call
   function renderKeywords(keywords) {
     return `
       <ul>
         ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
       </ul>
     `;
-  }
+  } //join at the empty space so it will remove the commas from the array
 
+
+// function that will be called will use the beer.keywords to list out the types 
   const markup = `
     <div class="beer">
       <h2>${beer.name}</h2>
@@ -27,6 +30,8 @@
       ${renderKeywords(beer.keywords)}
     </div>
   `;
+
+
 
   document.body.innerHTML = markup;
 
