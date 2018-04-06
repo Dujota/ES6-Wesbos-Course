@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tagged Templates</title>
+  <style>
+    .hl {
+      background: #ffc600;
+    }
+  </style>
+</head>
+<body>
+<script>
+
+function highlight(strings, ...values) {
+  // debugger;
+
+// we will assign a new string the pieces fromt he arrays and control how it is constructed
+  let string = '';
+  strings.forEach((string, i) => {
+    string += string + (values[i] || ''); // since the strings array is always larger than the values index, then we need give it a default value whic is the || ''
+    // give me the first value from the string and the values array and concatenate
+
+    string += `${string} <span class="hl">${values[i] || ''}</span>`;
+  })
+}
+
+const name = 'Snickers'
+const age = 100
+const sentence  = highlight`My dog's name is ${name} and he is ${age} years old`;
+
+console.log(sentence);
+document.body.innerHTML = sentence
+</script>
+</body>
+</html>

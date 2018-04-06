@@ -11,6 +11,8 @@
 </head>
 <body>
 <script>
+
+//tagging is essentially running a template literal through a function and we can control how the string is made rather than the browser fills in the variables
   function highlight(strings, ...values) {
     let str = '';
     strings.forEach((string, i) => {
@@ -22,10 +24,13 @@
   const name = 'Snickers';
   const age = 100;
 
+//you create a function, then take the name of the functon and put it in front of template literal, the browser will run the function and provide all the info from the string and whatever we return from the fucntion is what will actually be rendered.
   const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
+
+// works like
   document.body.innerHTML = sentence;
   console.log(sentence);
-
+// you will get a strings array in the debuger, even if we add another variable it will always be bigger than the # of variables. you get an array of strings and an array of values
 </script>
 </body>
 </html>
